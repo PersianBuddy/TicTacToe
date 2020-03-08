@@ -16,4 +16,17 @@ def print_panel():
         game_panel_print += '\n'
     print(game_panel_print)
 
-print_panel()
+
+# create a turn indicator
+# it's value can be either 'X' or 'O'
+turn_indicator ='X'
+# function that change turns
+def switch_turn():
+    global turn_indicator
+    if  turn_indicator == 'X':
+        turn_indicator = 'O'
+    else:
+        turn_indicator = 'O'
+
+switch_turn()
+print(turn_indicator)

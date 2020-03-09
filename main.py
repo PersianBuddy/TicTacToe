@@ -85,7 +85,7 @@ is_ended = False
 # Create a variable that count number of moves
 moves_count = 0
 
-while is_ended == False or moves_count < 9:
+while is_ended == False and moves_count < 9:
     player_choice = input(f'Player {turn_indicator} please select an number in panel that is not being chased: ')
     #TODO: check the input to be an intiger
     #TODO: check the number to be between 1-9

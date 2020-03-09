@@ -26,7 +26,7 @@ def switch_turn():
     if  turn_indicator == 'X':
         turn_indicator = 'O'
     else:
-        turn_indicator = 'O'
+        turn_indicator = 'X'
 
 
 # Create winner indicator

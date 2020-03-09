@@ -28,5 +28,41 @@ def switch_turn():
     else:
         turn_indicator = 'O'
 
-switch_turn()
-print(turn_indicator)
+
+# Create winner indicator
+# it's value can be 'X' or 'Y' or 'Draw'
+winner_indicator = 'Draw'
+
+# function to check if there is a winner at the end of each move
+def check_winner():
+    winner = 0
+    global game_panel
+    global winner_indicator
+    if game_panel[0][0] != 0 and game_panel[0][0]==game_panel[0][1] == game_panel[0][2] :
+        winner = game_panel[0][0]
+    elif game_panel[1][0] != 0 and game_panel[1][0]==game_panel[1][1] == game_panel[1][2] :
+        winner = game_panel[1][0]
+    elif game_panel[2][0] != 0 and game_panel[2][0]==game_panel[2][1] == game_panel[2][2] :
+        winner = game_panel[2][0]
+    elif game_panel[0][0] != 0 and game_panel[0][0]==game_panel[1][0] == game_panel[2][0] :
+        winner = game_panel[0][0]
+    elif game_panel[0][1] != 0 and game_panel[0][1] == game_panel[1][1] == game_panel[2][1]:
+       winner = game_panel[0][1]
+    elif game_panel[0][2] != 0 and game_panel[0][2] == game_panel[1][2] == game_panel[2][2]:
+        winner = game_panel[0][2]
+    elif game_panel[1][1] != 0 and game_panel[1][1] == game_panel[0][0] == game_panel[2][2]:
+        winner = game_panel[1][1]
+    elif game_panel[1][1] != 0 and game_panel[1][1] == game_panel[0][2] == game_panel[2][0]:
+        winner = game_panel[1][1]
+
+    # Check the winner and return True if there is a winner
+    if winner == 0 :
+        return False
+    elif winner == 1 :
+        winner_indicator = 'X'
+        return True
+    else:
+        winner_indicator = 'O'
+        return True
+
+check_winner()

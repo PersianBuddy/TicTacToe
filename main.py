@@ -78,3 +78,26 @@ def update_panel(player_choice, player_indicator):
         game_panel[row][col] = 1
     else:
         game_panel[row][col] =2
+
+# variable that check if the game is ended
+is_ended = False
+
+# Create a variable that count number of moves
+moves_count = 0
+
+while is_ended == False or moves_count < 9:
+    player_choice = input(f'Player {turn_indicator} please select an number in panel that is not being chased: ')
+    #TODO: check the input to be an intiger
+    #TODO: check the number to be between 1-9
+    #TODO: check that position is not chosed before
+    player_choice = int(player_choice)
+    update_panel(player_choice,turn_indicator)
+    print_panel()
+    is_ended = check_winner()
+    switch_turn()
+    moves_count += 1
+
+if  winner_indicator =='Draw':
+    print('Good game for both player, It\'s finised as a draw')
+else:
+    print(f'Congratulation to player {winner_indicator} your the Winner :)')

@@ -65,4 +65,16 @@ def check_winner():
         winner_indicator = 'O'
         return True
 
-check_winner()
+# function that get a value from 1-9 (player choice) and update game panel based on that
+def update_panel(player_choice, player_indicator):
+    if  player_choice % 3 == 0:
+        row = int(player_choice) -1
+        col =2
+    else:
+        row = int(player_choice)
+        col = 2 - (player_choice % 3)
+
+    if  player_indicator == 'X':
+        game_panel[row][col] = 1
+    else:
+        game_panel[row][col] =2
